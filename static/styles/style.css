@@ -833,31 +833,31 @@ h6 {
        -o-transform: scale(1.1);
           transform: scale(1.1);
 }
-.list .col:nth-child(1) .list-item-icon {
+.list .col-12:nth-child(1) .list-item-icon {
   background-color: #ff0000;
 }
-.list .col:nth-child(2) .list-item-icon {
+.list .col-12:nth-child(2) .list-item-icon {
   background-color: #00ff00;
 }
-.list .col:nth-child(3) .list-item-icon {
+.list .col-12:nth-child(3) .list-item-icon {
   background-color: #0000ff;
 }
-.list .col:nth-child(4) .list-item-icon {
+.list .col-12:nth-child(4) .list-item-icon {
   background-color: #d4d400;
 }
-.list .col:nth-child(5) .list-item-icon {
+.list .col-12:nth-child(5) .list-item-icon {
   background-color: #ffa500;
 }
-.list .col:nth-child(6) .list-item-icon {
+.list .col-12:nth-child(6) .list-item-icon {
   background-color: #800080;
 }
-.list .col:nth-child(7) .list-item-icon {
+.list .col-12:nth-child(7) .list-item-icon {
   background-color: #ffc0cb;
 }
-.list .col:nth-child(8) .list-item-icon {
+.list .col-12:nth-child(8) .list-item-icon {
   background-color: #a52a2a;
 }
-.list .col:nth-child(9) .list-item-icon {
+.list .col-12:nth-child(9) .list-item-icon {
   background-color: #808080;
 }
 .list-qs-item {
@@ -1130,7 +1130,7 @@ h6 {
   background-position: center center;
   -o-background-size: cover;
      background-size: cover;
-  background-image: url("../images/home/choose-bg.png?v=lp1jg9ey");
+  background-image: url("../images/home/choose-bg.png?v=qi1ho2gy");
 }
 .section-choose .section-title {
   text-align: center;
@@ -1193,7 +1193,7 @@ h6 {
   background-position: center center;
   -o-background-size: cover;
      background-size: cover;
-  background-image: url("../images/home/book-bg.png?v=lp1jg9ey");
+  background-image: url("../images/home/book-bg.png?v=qi1ho2gy");
 }
 .section-call .row {
   -webkit-align-items: center;
@@ -1285,10 +1285,10 @@ h6 {
   border-radius: 300px 0 0 300px;
 }
 .section-case .carousel button .carousel-control-prev-icon {
-  background-image: url(../images/home/icon/arrow-left.svg?v=lp1jg9ey);
+  background-image: url(../images/home/icon/arrow-left.svg?v=qi1ho2gy);
 }
 .section-case .carousel button .carousel-control-next-icon {
-  background-image: url(../images/home/icon/arrow-right.svg?v=lp1jg9ey);
+  background-image: url(../images/home/icon/arrow-right.svg?v=qi1ho2gy);
 }
 .section-case .carousel .case-img {
   overflow: hidden;
@@ -1318,7 +1318,7 @@ h6 {
   margin-right: auto;
 }
 .section-clients {
-  background-image: url("../images/home/client-bg.png?v=lp1jg9ey");
+  background-image: url("../images/home/client-bg.png?v=qi1ho2gy");
   background-repeat: no-repeat;
   background-position: center center;
   -o-background-size: cover;
@@ -1413,14 +1413,16 @@ h6 {
   .header-navbar .navbar-brand img {
     height: 30px;
   }
+  .swiper-show-left, .swiper-show-right {
+    display: none;
+  }
+  .footer {
+    margin: 0;
+  }
   .section {
     padding-top: 40px;
     padding-bottom: 40px;
     position: relative;
-  }
-  .footer {
-    margin: 0;
-    padding-top: 100px;
   }
   .section-banner {
     text-align: center;
@@ -1433,7 +1435,7 @@ h6 {
   .section-banner-right {
     padding-top: 0;
   }
-  .section-banner-right-img {
+  .section-banner-right img {
     -webkit-transform: translateY(0);
        -moz-transform: translateY(0);
         -ms-transform: translateY(0);
