@@ -1,0 +1,12 @@
+.swiper-creative .swiper-slide {
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+  -webkit-transition-property: opacity, height, -webkit-transform;
+  transition-property: opacity, height, -webkit-transform;
+  -o-transition-property: opacity, height, -o-transform;
+  -moz-transition-property: transform, opacity, height, -moz-transform;
+  transition-property: transform, opacity, height;
+  transition-property: transform, opacity, height, -webkit-transform, -moz-transform, -o-transform;
+}

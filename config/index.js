@@ -1,0 +1,1 @@
+const mode=process.env.MODE||process.env.NODE_ENV||"development",fs=require("fs"),path=require("path"),config=require("production"===mode?"./prod":"./dev"),modules={},files=fs.readdirSync(path.join(__dirname,"./modules"));files.forEach(e=>{var o=path.basename(e,".js");modules[o]=require("./modules/"+e)}),module.exports={...config,...modules};

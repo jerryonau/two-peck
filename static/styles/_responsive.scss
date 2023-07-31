@@ -1,0 +1,66 @@
+@media (max-width: 1024px) {
+  .header {
+    &-navbar {
+      background-color: #fff;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+      .navbar-brand {
+        img {
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+  }
+
+  .footer {
+    margin: 0;
+    padding-top: 100px;
+  }
+
+  .section {
+    &-banner {
+      text-align: center;
+      padding-top: 100px;
+      h1 {
+        font-size: 60px;
+        line-height: 60px;
+      }
+      &-right {
+        padding-top: 0;
+        &-img {
+          transform: translateY(0);
+        }
+      }
+    }
+    &-choose {
+      .choose-item {
+        justify-content: flex-start;
+      }
+    }
+
+    &-call {
+      .row {
+        .col-md-3 {
+          text-align: center;
+        }
+      }
+    }
+
+    &-case {
+      .carousel {
+        .container {
+          width: 80%;
+        }
+      }
+    }
+
+    &-clients {
+    }
+  }
+}
