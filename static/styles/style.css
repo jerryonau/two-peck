@@ -1130,7 +1130,7 @@ h6 {
   background-position: center center;
   -o-background-size: cover;
      background-size: cover;
-  background-image: url("../images/home/choose-bg.png?v=qi1ho2gy");
+  background-image: url("../images/home/choose-bg.png?v=porwv9if");
 }
 .section-choose .section-title {
   text-align: center;
@@ -1193,7 +1193,7 @@ h6 {
   background-position: center center;
   -o-background-size: cover;
      background-size: cover;
-  background-image: url("../images/home/book-bg.png?v=qi1ho2gy");
+  background-image: url("../images/home/book-bg.png?v=porwv9if");
 }
 .section-call .row {
   -webkit-align-items: center;
@@ -1285,10 +1285,10 @@ h6 {
   border-radius: 300px 0 0 300px;
 }
 .section-case .carousel button .carousel-control-prev-icon {
-  background-image: url(../images/home/icon/arrow-left.svg?v=qi1ho2gy);
+  background-image: url(../images/home/icon/arrow-left.svg?v=porwv9if);
 }
 .section-case .carousel button .carousel-control-next-icon {
-  background-image: url(../images/home/icon/arrow-right.svg?v=qi1ho2gy);
+  background-image: url(../images/home/icon/arrow-right.svg?v=porwv9if);
 }
 .section-case .carousel .case-img {
   overflow: hidden;
@@ -1318,7 +1318,7 @@ h6 {
   margin-right: auto;
 }
 .section-clients {
-  background-image: url("../images/home/client-bg.png?v=qi1ho2gy");
+  background-image: url("../images/home/client-bg.png?v=porwv9if");
   background-repeat: no-repeat;
   background-position: center center;
   -o-background-size: cover;
