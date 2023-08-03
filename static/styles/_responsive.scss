@@ -9,6 +9,10 @@
           height: 30px;
         }
       }
+
+      .nav-item {
+        margin-left: 0;
+      }
     }
   }
   .swiper-show {
@@ -63,6 +67,12 @@
     }
 
     &-clients {
+    }
+  }
+
+  .enquiry {
+    .formbox {
+      width: 100%;
     }
   }
 }

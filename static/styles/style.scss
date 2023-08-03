@@ -82,9 +82,9 @@ body {
   z-index: $zindex + 99;
   &-spin {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    transform: translateX(-50%) translateY(-50%);
 
     &::after,
     &::before {
@@ -454,7 +454,7 @@ h6 {
           bottom: unset;
           opacity: 1;
         }
-        a {
+        > a {
           color: $primary;
         }
       }
@@ -464,6 +464,32 @@ h6 {
         padding-left: 0;
         padding-right: 0;
       }
+
+      &:last-child {
+        .dropdown-menu {
+          left: unset;
+          right: 0;
+        }
+      }
+
+      .dropdown-item {
+        text-transform: capitalize;
+        font-weight: 600;
+        &:hover {
+          color: $primary;
+        }
+      }
+      .dropdown-menu {
+        li.active {
+          a {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
     }
   }
 }
@@ -475,11 +501,15 @@ h6 {
   &-title {
     margin-bottom: 10px;
 
-    h1 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-weight: 900;
       font-family: $font-family-sans-serif;
       text-transform: capitalize;
-
       color: #171717;
     }
   }
@@ -796,6 +826,60 @@ h6 {
   .copyright {
     padding-top: 20px;
     border-top: 1px solid rgba($color: #fff, $alpha: 0.5);
+  }
+}
+
+.subpage {
+  .section {
+    &-banner {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      .container {
+        padding-top: 150px;
+        padding-bottom: 150px;
+        color: #fff;
+        h1 {
+          color: #fff;
+          font-size: 50px;
+          font-weight: 900;
+          font-family: var(--font-family-sans-serif);
+        }
+        p {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.enquiry {
+  .section {
+    &-banner {
+      &.bg {
+        &-1 {
+          background-image: url("../images/enquiry/section-bg-1.jpg");
+        }
+        &-2 {
+          background-image: url("../images/enquiry/section-bg-2.jpg");
+        }
+        &-3 {
+          background-image: url("../images/enquiry/section-bg-3.jpg");
+        }
+      }
+    }
+  }
+
+  .formbox {
+    margin: 0 auto;
+    width: 60%;
+    .form-control {
+      &:focus {
+        box-shadow: 0 0 0 0.25rem rgba($color: $primary, $alpha: 0.25);
+        border-color: $primary;
+      }
+    }
   }
 }
 

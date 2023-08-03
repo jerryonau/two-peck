@@ -588,13 +588,17 @@ body {
 }
 .loading-spin {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  top: -webkit-calc(50% - 20px);
+  top: -moz-calc(50% - 20px);
+  top: calc(50% - 20px);
+  left: -webkit-calc(50% - 20px);
+  left: -moz-calc(50% - 20px);
+  left: calc(50% - 20px);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+     -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+       -o-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
 }
 .loading-spin::after, .loading-spin::before {
   content: "";
@@ -1021,7 +1025,7 @@ h6 {
   bottom: unset;
   opacity: 1;
 }
-.header-navbar .nav-item.active a, .header-navbar .nav-item:hover a {
+.header-navbar .nav-item.active > a, .header-navbar .nav-item:hover > a {
   color: #f17228;
 }
 .header-navbar .nav-item .nav-link {
@@ -1029,6 +1033,23 @@ h6 {
   font-weight: 600;
   padding-left: 0;
   padding-right: 0;
+}
+.header-navbar .nav-item:last-child .dropdown-menu {
+  left: unset;
+  right: 0;
+}
+.header-navbar .nav-item .dropdown-item {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.header-navbar .nav-item .dropdown-item:hover {
+  color: #f17228;
+}
+.header-navbar .nav-item .dropdown-menu li.active a {
+  color: #f17228;
+}
+.header-navbar .dropdown:hover > .dropdown-menu {
+  display: block;
 }
 
 .section {
@@ -1039,7 +1060,12 @@ h6 {
 .section-title {
   margin-bottom: 10px;
 }
-.section-title h1 {
+.section-title h1,
+.section-title h2,
+.section-title h3,
+.section-title h4,
+.section-title h5,
+.section-title h6 {
   font-weight: 900;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: capitalize;
@@ -1130,7 +1156,7 @@ h6 {
   background-position: center center;
   -o-background-size: cover;
      background-size: cover;
-  background-image: url("../images/home/choose-bg.png?v=kfi089pi");
+  background-image: url("../images/home/choose-bg.png?v=bfi2lb5i");
 }
 .section-choose .section-title {
   text-align: center;
@@ -1193,7 +1219,7 @@ h6 {
   background-position: center center;
   -o-background-size: cover;
      background-size: cover;
-  background-image: url("../images/home/book-bg.png?v=kfi089pi");
+  background-image: url("../images/home/book-bg.png?v=bfi2lb5i");
 }
 .section-call .row {
   -webkit-align-items: center;
@@ -1285,10 +1311,10 @@ h6 {
   border-radius: 300px 0 0 300px;
 }
 .section-case .carousel button .carousel-control-prev-icon {
-  background-image: url(../images/home/icon/arrow-left.svg?v=kfi089pi);
+  background-image: url(../images/home/icon/arrow-left.svg?v=bfi2lb5i);
 }
 .section-case .carousel button .carousel-control-next-icon {
-  background-image: url(../images/home/icon/arrow-right.svg?v=kfi089pi);
+  background-image: url(../images/home/icon/arrow-right.svg?v=bfi2lb5i);
 }
 .section-case .carousel .case-img {
   overflow: hidden;
@@ -1318,7 +1344,7 @@ h6 {
   margin-right: auto;
 }
 .section-clients {
-  background-image: url("../images/home/client-bg.png?v=kfi089pi");
+  background-image: url("../images/home/client-bg.png?v=bfi2lb5i");
   background-repeat: no-repeat;
   background-position: center center;
   -o-background-size: cover;
@@ -1405,6 +1431,46 @@ h6 {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+.subpage .section-banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -o-background-size: cover;
+     background-size: cover;
+  background-attachment: fixed;
+}
+.subpage .section-banner .container {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #fff;
+}
+.subpage .section-banner .container h1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 900;
+  font-family: var(--font-family-sans-serif);
+}
+.subpage .section-banner .container p {
+  color: #fff;
+}
+
+.enquiry .section-banner.bg-1 {
+  background-image: url("../images/enquiry/section-bg-1.jpg?v=bfi2lb5i");
+}
+.enquiry .section-banner.bg-2 {
+  background-image: url("../images/enquiry/section-bg-2.jpg?v=bfi2lb5i");
+}
+.enquiry .section-banner.bg-3 {
+  background-image: url("../images/enquiry/section-bg-3.jpg?v=bfi2lb5i");
+}
+.enquiry .formbox {
+  margin: 0 auto;
+  width: 60%;
+}
+.enquiry .formbox .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(241, 114, 40, 0.25);
+  border-color: #f17228;
+}
+
 @media (max-width: 1024px) {
   .header-navbar {
     background-color: #fff;
@@ -1412,6 +1478,9 @@ h6 {
   }
   .header-navbar .navbar-brand img {
     height: 30px;
+  }
+  .header-navbar .nav-item {
+    margin-left: 0;
   }
   .swiper-show-left, .swiper-show-right {
     display: none;
@@ -1453,5 +1522,8 @@ h6 {
   }
   .section-case .carousel .container {
     width: 80%;
+  }
+  .enquiry .formbox {
+    width: 100%;
   }
 }
