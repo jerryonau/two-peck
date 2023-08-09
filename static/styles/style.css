@@ -363,7 +363,8 @@ template {
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-base: "Source Sans Pro", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -625,7 +626,8 @@ body {
   transform: translateX(-50%) translateY(-50%);
 }
 
-.loading-spin::after, .loading-spin::before {
+.loading-spin::after,
+.loading-spin::before {
   content: "";
   display: block;
   width: 40px;
@@ -870,7 +872,8 @@ h6 {
   transition: all 0.4s ease-in-out;
 }
 
-.list-qs-item h2::before, .list-qs-item h2::after {
+.list-qs-item h2::before,
+.list-qs-item h2::after {
   content: "";
   display: block;
   position: absolute;
@@ -992,13 +995,15 @@ h6 {
   transition: all 0.4s ease-in-out;
 }
 
-.header-navbar .nav-item.active::before, .header-navbar .nav-item:hover::before {
+.header-navbar .nav-item.active::before,
+.header-navbar .nav-item:hover::before {
   top: 0;
   bottom: unset;
   opacity: 1;
 }
 
-.header-navbar .nav-item.active > a, .header-navbar .nav-item:hover > a {
+.header-navbar .nav-item.active > a,
+.header-navbar .nav-item:hover > a {
   color: #f17228;
 }
 
@@ -1048,7 +1053,8 @@ h6 {
 .section-title h5,
 .section-title h6 {
   font-weight: 900;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   text-transform: capitalize;
   color: #171717;
 }
@@ -1427,6 +1433,101 @@ h6 {
   border-color: #f17228;
 }
 
+.section-stores {
+  background: #e4ebf4;
+}
+
+.olcards,
+.olcards * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.olcards {
+  list-style: none;
+  counter-reset: cardCount;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  --cardsGap: 1rem;
+  gap: var(--cardsGap);
+  padding-bottom: var(--cardsGap);
+}
+.olcards li {
+  counter-increment: cardCount;
+  display: flex;
+  color: white;
+  --labelOffset: 1rem;
+  --arrowClipSize: 1.5rem;
+  margin-top: var(--labelOffset);
+}
+
+.olcards li::before {
+  content: counter(cardCount, decimal-leading-zero);
+  background: white;
+  color: var(--cardColor);
+  font-size: 2em;
+  font-weight: 700;
+  transform: translateY(calc(-1 * var(--labelOffset)));
+  margin-right: calc(-1 * var(--labelOffset));
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 0.5em;
+}
+
+.olcards li .content {
+  width: 100%;
+  background-color: var(--cardColor);
+  --inlinePadding: 1em;
+  --boxPadding: 0.5em;
+  padding: var(--boxPadding) calc(var(--inlinePadding) + var(--arrowClipSize)) var(--boxPadding) calc(var(--inlinePadding) + var(--labelOffset));
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--arrowClipSize)) 0,
+    100% 50%,
+    calc(100% - var(--arrowClipSize)) 100%,
+    calc(100% - var(--arrowClipSize)) calc(100% + var(--cardsGap)),
+    0 calc(100% + var(--cardsGap))
+  );
+  position: relative;
+}
+.olcards li .content::before {
+  content: "";
+  position: absolute;
+  width: var(--labelOffset);
+  height: var(--labelOffset);
+  background: var(--cardColor);
+  left: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  filter: brightness(0.75);
+}
+.olcards li .content::after {
+  content: "";
+  position: absolute;
+  height: var(--cardsGap);
+  width: var(--cardsGap);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent 50%);
+  left: 0;
+  top: 100%;
+}
+.olcards li .icon {
+  grid-area: icon;
+  align-self: center;
+  font-size: 2em;
+}
+.olcards li .content .title {
+  grid-area: title;
+  font-size: 1.25em;
+  /* font-weight: 700; */
+}
+.olcards li .content .text {
+  grid-area: text;
+}
+
 @media (max-width: 1024px) {
   .header-navbar {
     background-color: #fff;
@@ -1438,7 +1539,8 @@ h6 {
   .header-navbar .nav-item {
     margin-left: 0;
   }
-  .swiper-show-left, .swiper-show-right {
+  .swiper-show-left,
+  .swiper-show-right {
     display: none;
   }
   .footer {
