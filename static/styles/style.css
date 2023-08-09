@@ -1449,7 +1449,8 @@ h6 {
   counter-reset: cardCount;
   font-family: sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   --cardsGap: 1rem;
   gap: var(--cardsGap);
   padding-bottom: var(--cardsGap);
@@ -1458,6 +1459,7 @@ h6 {
   counter-increment: cardCount;
   display: flex;
   color: white;
+  width: 400px;
   --labelOffset: 1rem;
   --arrowClipSize: 1.5rem;
   margin-top: var(--labelOffset);
